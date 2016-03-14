@@ -104,15 +104,46 @@ public class DrawDemo
     /**
      * Método para dibujar un pentagono verde
      */
-    public void drawPentagon(int x, int y)
+    public void drawPentagon()
     {
-        Pen pen = new Pen(x, y, myCanvas);
+        Pen pen = new Pen(125, 125, myCanvas);
         pen.setColor(Color.GREEN);
         
         for (int index = 0; index<5; index++) {
             pen.penDown();
             pen.move(60);
             pen.turn(72);
+        }
+    }
+    
+    /**
+     * Método para dibujar un poligono con un número de lados insertado por parámetros
+     */
+    public void drawPolygon(int n)
+    {
+        Pen pen = new Pen(125, 125, myCanvas);
+        pen.setColor(Color.GREEN);
+        
+        for (int index = 0; index<n; index++) {
+            pen.penDown();
+            pen.move(60);
+            pen.turn(360/n);
+        }
+    }
+    
+    /**
+     * Método para dibujar una esperial
+     */
+    public void drawSpiral()
+    {
+        Pen pen = new Pen(125, 125, myCanvas);
+        pen.setColor(Color.BLACK);
+        
+        for (int index = 0; index<60; index++) {
+            pen.penDown();
+            pen.move(60-index);
+            pen.turn(90);
+            pen.move(60-index);
         }
     }
 }
