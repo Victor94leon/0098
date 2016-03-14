@@ -100,4 +100,19 @@ public class DrawDemo
             pen.turn(120);
         }
     }
+    
+    /**
+     * Método para dibujar un pentagono verde
+     */
+    public void drawPentagon(int x, int y)
+    {
+        Pen pen = new Pen(x, y, myCanvas);
+        pen.setColor(Color.GREEN);
+        
+        for (int index = 0; index<5; index++) {
+            pen.penDown();
+            pen.move(60);
+            pen.turn(72);
+        }
+    }
 }
